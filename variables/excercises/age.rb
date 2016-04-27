@@ -1,0 +1,27 @@
+# 2. Write a program called age.rb that asks a user how old they are
+# and then tells them how old they will be in 10, 20, 30 and 40 years.
+
+puts "How old are you?"
+age = gets.chomp.to_i
+
+puts "In 10 years you will be #{age + 10} years old."
+puts "In 20 years you will be #{age + 20} years old."
+puts "In 30 years you will be #{age + 30} years old."
+puts "In 40 years you will be #{age + 40} years old."
+
+puts "\n"
+
+puts "Using for loop:"
+years = [10, 20, 30, 40]
+
+for y in years do
+  puts "In #{y} years you will be #{age + y} years old."
+end
+
+puts "\n"
+
+puts "Using each"
+
+years.each do |n|
+  puts "In #{n} years you will be #{age + n} years old."
+end
