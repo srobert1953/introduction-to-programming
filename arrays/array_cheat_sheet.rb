@@ -15,7 +15,6 @@ a.pop                       # Removes the last element from array
 a.push(6)                   # Adds an element into the array. It can be any element
 a << 7                      # Same as push() method
 a.unshift(“val”)            # Adds new value at the beginning of the array
-a.collect                   # As map, does the same thing
 a.delete_at(<index>)        # Permanently deletes value at given index number
 a.delete(“value”)           # Deletes a value(s) in the array
 a.uniq                      # Returns a new array with only unique values
@@ -28,6 +27,7 @@ a.join                      # As we can split String into an array, we can also 
 
 b = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 b.map {|v| expression}      # Modify an array, makes copy of original and return a new array
+a.collect                   # As map, does the same thing
 b.each {|v| expression}     # Iterate over the array and do something with each value
 b.each_index { |index| puts "Index #{index}"} # Much like index, but doesn't give value of array, but index number
 b.each_with_index { |val, ind| puts "Index #{ind +1} has value: #{val}"} # Iterate over array and use index and value
