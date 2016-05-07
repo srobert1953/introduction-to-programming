@@ -26,17 +26,20 @@
     width: 204px;
     padding: 30px 10px 30px 0px;
   }
-  #nav ul {
+  ul {
     list-style-type: none;
     padding-left: 0;
+  }
+  a {
+    color: black;
+  }
+  a:hover {
+    color: #2196F3;
   }
   #nav a {
     text-decoration: none;
     color: #2C3539;
     line-height: 1.5em;
-  }
-  #nav a:hover {
-    color: #1569C7;
   }
   #content {
     position: relative;
@@ -53,18 +56,39 @@
     border-radius: 2px;
     color: white;
     background-color: #566D7E;
-    font-family: 'DejaVu Sans Mono', sans-serif;
+    font-family: 'DejaVu Sans Mono', "Lucida Console", Monaco, monospace;
     position: relative;
   }
   .code p {
-    margin-top: 0.4em;
-    margin-bottom: 0.4em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+  .inline-code {
+    font-family: 'DejaVu Sans Mono', "Lucida Console", Monaco, monospace;
+    background-color: #ECEFF1;
+    display: inline-block;
+    border-radius: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .lead {
+    background-color: #2196F3;
+    color: white;
+  }
+  .destructive {
+    color: #F44336;
   }
   .comment {
     padding: 0px 0px 10px 0px;
   }
   .item {
     margin: 20px 0px;
+  }
+  .info {
+    background-color: #FFF9C4;
+    border-radius: 2px;
+    padding: 30px;
+    margin: 30px 0px;
   }
   </style>
 </head>
@@ -84,11 +108,11 @@
     <ul>
       <li>String is a sequence of characters. </li>
       <li>Characters are ordered so each character has its own index. </li>
-      <li>Use single or double quotations '', "". Using double quotations, interpolation can be used #{}, but not with single quotations.</li>
+      <li>Use single or double quotations <span class="inline-code">'', ""</span> to create a string. Using double quotations, interpolation can be used <span class="inline-code">"#{}"</span>, but not with single quotations.</li>
     </ul>
   </div>
   <div class="item">
-    <div class="comment">Displaying 6th character from string</div>
+    <div class="comment">Returns 6th character from string</div>
     <div class="code"><p>"This is code"[5]</p></div>
     <div class="code"><p>=> "i"</p></div>
   </div>
@@ -102,6 +126,96 @@
       <p>My favorite number is 53</p>
       <p>=> nil</p>
     </div>
+    <h2>Ineresting classes</h2>
+    <div class="item">
+    <div class="comment"><span class="inline-code lead">#<<</span> Append a string with another string.</div>
+    <div class="code">"Hello" << " World"</div>
+    <div class="code">=> "Hello World"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#capitalize</span> Capitalize the string, make the first letter capital. If all letters are capital, only first one will be capital.</div>
+      <div class="code">"hello".capitalize</div>
+      <div class="code">=> "Hello"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#chars</span> Returns an array of characters in string. Same as <span class="inline-code">"sttring".each_char.to_a</span> .</div>
+      <div class="code">"name".chars</div>
+      <div class="code">=> ["n", "a", "m", "e"]</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#chomp</span> Removes a line separator from the end of line if one exists.</div>
+      <div class="code">"line\n".chomp</div>
+      <div class="code">=> "line"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#clear</span> Makes the string empty. <span class="destructive">Destructive</span></div>
+      <div class="code">
+        <p>a = "remove me"</p>
+        <p>a.clear</p>
+      </div>
+      <div class="code">=> ""</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#downcase</span> Returns a string in lowercase if any character is uppercase.</div>
+      <div class="code">"I am UPPERCASE"</div>
+      <div class="code">=> "i am uppercase"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#empty?</span> Returns true if the given string is empty.</div>
+      <div class="code">"".empty?</div>
+      <div class="code">=> true</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#include?</span> Returns true if string contains given character or string.</div>
+      <div class="code">"Hello".include? "lo"</div>
+      <div class="code">=> true</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#length</span> Gives length of a string.</div>
+      <div class="code">"how long am I?".length</div>
+      <div class="code">=> 14</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#replace</span> Replaces the content of string with another string. <span class="destructive">Destructive</span></div>
+      <div class="code">
+        <p>a = "replace me"</p>
+        <p>a.replace "with this"</p>
+      </div>
+      <div class="code">=> "with this"</div>
+    </div>
+    <div class="item">
+    <div class="comment"><span class="inline-code lead">#reverse</span> Returns new string with characters in reverse order.</div>
+      <div class="code">"string".reverse</div>
+      <div class="code">=> "gnirts"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#strip</span> Returns string with leading and trailing whitespace removed.</div>
+      <div class="code">"&nbsp;&nbsp;&nbsp;&nbsp;remove the empty space&nbsp;&nbsp;&nbsp;&nbsp;".strip</div>
+      <div class="code">=> "remove the empty space"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><span class="inline-code lead">#upcase</span> Returns a string in uppercase if any character is lowercase.</div>
+      <div class="code">"I am lowercase"</div>
+      <div class="code">=> "I AM LOWERCASE"</div>
+    </div>
+
+    <h2>Check out</h2>
+      <div class="comment"><span class="inline-code lead">#count</span> Each other_str parameter defines a set of characters to count. <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html#method-i-count">more info</a></div>
+
+      <div class="comment"><span class="inline-code lead">#gsub</span> Returns a copy of str with the all occurrences of pattern substituted for the second argument. <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html#method-i-gsub">more info</a></div>
+
+      <div class="comment"><span class="inline-code lead">#index</span> Returns the index of the first occurrence of the given substring. <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html#method-i-index">more info</a></div>
+
+      <div class="comment"><span class="inline-code lead">#insert</span> Inserts other_str before the character at the given index. <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html#method-i-insert">more info</a></div>
+
+      <div class="comment"><span class="inline-code lead">#slice</span> Returns a substring. <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html#method-i-slice">more info</a></div>
+
+      <div class="comment"><span class="inline-code lead">#split</span> Divides str into substrings based on a delimiter, returning an array of these substrings. <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html#method-i-split">more info</a></div>
+
+      <div class="info">
+      For full String reference, follow this <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html">link</a>.
+      </div>
+
   </div>
 <!-- End Strings -->
 
