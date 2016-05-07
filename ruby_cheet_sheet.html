@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby Cheet Sheet</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    color: #0C090A;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+
+  .wraper {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  #nav {
+    float: left;
+    position: fixed;
+    width: 204px;
+    padding: 30px 10px 30px 0px;
+  }
+  #nav ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  #nav a {
+    text-decoration: none;
+    color: #2C3539;
+    line-height: 1.5em;
+  }
+  #nav a:hover {
+    color: #1569C7;
+  }
+  #content {
+    position: relative;
+    float: left;
+    width: 800px;
+    margin-left: 224px;
+  }
+  .description {
+    font-weight: 300;
+  }
+  .code {
+    padding: 10px 30px;
+    margin: 5px 0px;
+    border-radius: 2px;
+    color: white;
+    background-color: #566D7E;
+    font-family: 'DejaVu Sans Mono', sans-serif;
+    position: relative;
+  }
+  .code p {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+  }
+  .comment {
+    padding: 0px 0px 10px 0px;
+  }
+  .item {
+    margin: 20px 0px;
+  }
+  </style>
+</head>
+<body>
+<div class="wraper">
+<div id="nav">
+  <ul>
+    <li><a href="#strings">Strings</a></li>
+    <li><a href="#type_conversion">Type Conversion</a></li>
+    <li><a href="#array">Arrays</a></li>
+    <li><a href="#hash">Hashes</a></li>
+  </ul>
+</div>
+<div id="content">
+  <h1 id="strings">Strings</h1>
+  <div class="description">
+    <ul>
+      <li>String is a sequence of characters. </li>
+      <li>Characters are ordered so each character has its own index. </li>
+      <li>Use single or double quotations '', "". Using double quotations, interpolation can be used #{}, but not with single quotations.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="comment">Displaying 6th character from string</div>
+    <div class="code"><p>"This is code"[5]</p></div>
+    <div class="code"><p>=> "i"</p></div>
+  </div>
+  <div class="item">
+    <div class="comment">Interpolation example</div>
+    <div class="code">
+      <p>a = 53</p>
+      <p>puts "My favorite number is #{a}"</p>
+    </div>
+    <div class="code">
+      <p>My favorite number is 53</p>
+      <p>=> nil</p>
+    </div>
+  </div>
+<!-- End Strings -->
+
+  <h1 id="type_conversion">Type conversion</h1>
+  <div class="description">
+    <ul>
+      <li>Convert one type to another type</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="comment">Convert string to integer</div>
+    <div class="code"><p>"3".to_i</p></div>
+  </div>
+  <div class="item">
+    <div class="comment">Convert string to float</div>
+    <div class="code"><p>"4".to_f</p></div>
+  </div>
+<!-- End Type Conversion -->
+
+  <h1 id="array">Arrays</h1>
+<!-- End Arrays -->
+
+  <h1 id="hash">Hashes</h1>
+<!-- End Hashes -->
+</div> <!-- End wraper -->
+</div>
+</body>
+</html>

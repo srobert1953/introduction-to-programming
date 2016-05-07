@@ -1,4 +1,5 @@
 # files_cheat_sheet.rb
+# Side note: To work with xls file, us gem axlsx. To parse xml use nokogiri gem.
 
 my_file = File.new("first_file.exe", "w+")    # Creates a new file with read/write
 my_file.close                                 # ALWAYS CLOSE FILES, when called again, returns #<File:first_file.txt (closed)>
