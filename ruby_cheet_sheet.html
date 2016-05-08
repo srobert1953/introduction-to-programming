@@ -97,6 +97,7 @@
 <div id="nav">
   <ul>
     <li><a href="#strings">Strings</a></li>
+    <li><a href="#variables">Variables</a></li>
     <li><a href="#type_conversion">Type Conversion</a></li>
     <li><a href="#array">Arrays</a></li>
     <li><a href="#hash">Hashes</a></li>
@@ -213,11 +214,60 @@
       <div class="comment"><span class="inline-code lead">#split</span> Divides str into substrings based on a delimiter, returning an array of these substrings. <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html#method-i-split">more info</a></div>
 
       <div class="info">
-      For full String reference, follow this <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html">link</a>.
+      For full String class reference, follow this <a target="_blank" href="http://ruby-doc.org/core-2.2.0/String.html">link</a>.
       </div>
 
   </div>
 <!-- End Strings -->
+
+  <h1 id="variables">Variables</h1>
+  <div class="description">
+    <ul>
+      <li>Variables are used to store information, manipulate with it or reference to it later.</li>
+      <li>Use descriptive names for variables.</li>
+      <li>The purpoe is to label and store data in memory.</li>
+    </ul>
+
+    <h2>Variable types</h2>
+    <div class="item">
+      <div class="comment"><strong>Constatns</strong> are declared by capitalizing every letter in the name. They store data that never change.</div>
+      <div class="code">MY_CONSTATNT = "I am a constatnat"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><strong>Global variables</strong> are declared with dollar sign <span class="inline-code">$</span> . These variables are available trhoughout entire program. Stay away from them as they may cause complications.</div>
+      <div class="code">$var = "I can be used everywhere"</div>
+    </div>
+    <div class="item">
+    <div class="comment"><strong>Class variables</strong> are declared with two <span class="inline-code">@@</span> signs. When you want a variable that is accessible by class as well as instatnt of that class, but the instant does not nead its own value, use class variables.</div>
+    <div class="code">@@instatnce = 0</div>
+    </div>
+    <div class="item">
+      <div class="comment"><strong>Instance variables</strong> are declared with one <span class="inline-code">@</span> sign. This variables are used for the particular instance of the class.</div>
+      <div class="code">@var = "Use me in the current instance"</div>
+    </div>
+    <div class="item">
+      <div class="comment"><strong>Local variables</strong> are most common variable types and they don't start with @ or $ sign, nor they are capitalized.</div>
+      <div class="code">variable = "I am local variable"</div>
+    </div>
+    <h3>Getting data from a user</h3>
+    <div class="item">
+      <div class="comment">Use <span class="inline-code">gets</span> to get input from a user in console. Assign the value into a variable and use it later.</div>
+      <div class="code"><p>name = gets</p>
+      <p>Robert</p>
+      </div>
+      <div class="code">=> "Robert\n"</div>
+      <div class="comment">To remove the <span class="inline-code">\n</span> , use <span class="inline-code">#chomp</span> instance method.</div>
+    </div>
+
+    <h2>Variable scope</h2>
+      <ul>
+        <li>Variable declared inside a block are not accessible outside of that block.</li>
+        <li>Hovewer, variables created outside of the block can be changed/affected inside the block.</li>
+        <li>Variable inside a method cannot change variable outside of it.</li>
+        <li><span class="inline-code">for</span> loop is not a block, and variables declared inside for loop are accessible outside it.</li>
+      </ul>
+  </div>
+<!-- End Variables -->
 
   <h1 id="type_conversion">Type conversion</h1>
   <div class="description">
@@ -240,7 +290,7 @@
 
   <h1 id="hash">Hashes</h1>
 <!-- End Hashes -->
+</div> <!-- End content -->
 </div> <!-- End wraper -->
-</div>
 </body>
 </html>
