@@ -17,7 +17,7 @@ def scream(words)
   # puts words
 end
 
-p scream("Yipeee")
+scream("Yipeee")
 
 # 5.
 # 1) Edit the method in exercise #4 so that it does print words on the screen.
@@ -28,4 +28,4 @@ def scream(words)
   p words
 end
 
-p scream("Yipeee")
+scream("Yipeee")
