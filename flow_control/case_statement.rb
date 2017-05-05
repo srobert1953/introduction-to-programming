@@ -1,6 +1,6 @@
 # case_statement.rb
 
-a = 5
+a = 9
 
 answer = case a
   when 3
